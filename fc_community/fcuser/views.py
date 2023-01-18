@@ -8,12 +8,7 @@ from .forms import LoginForm
 
 
 def home(requset):
-    user_id = requset.session.get('user')
-
-    if user_id:
-        fcuser = Fcuser.objects.get(pk=user_id)
-        return HttpResponse(fcuser.username)
-    return HttpResponse('Home!')
+    return render(requset, 'home.html')
 
 
 def logout(request):
